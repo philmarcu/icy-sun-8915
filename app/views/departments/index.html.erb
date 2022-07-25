@@ -2,11 +2,11 @@
 
 <% @departments.each do |dept| %>
   <div id="dept-<%= dept.id %>">
-  <b><%= dept.name %></b> <br>
-  <p><%= dept.floor %> Floor</p>
+    <b><%= dept.name %></b> <br>
+    <p><%= dept.floor %> Floor</p>
+      <p>Current <%= dept.name %> Employees-</p>
+    <% dept.employees.each do |emp| %>
+      <p> <%= emp.name %></p>
+    <% end %>
   </div>
-    <p>Current <%= dept.name %> Employees-</p>
-  <% dept.employees.each do |emp| %>
-    <p> <%= emp.name %></p>
-  <% end %>
 <% end %>

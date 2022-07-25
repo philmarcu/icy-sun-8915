@@ -18,25 +18,19 @@ RSpec.describe 'Dept index page' do
       within "#dept-#{hr.id}" do
         expect(page).to have_content("Human Resources")
         expect(page).to have_content("Third Floor")
-        expect(page).to have_content("Dana W")
         expect(page).to_not have_content("Info Technology")
-        expect(page).to_not have_content("Marky Mark")
       end
 
       within "#dept-#{it.id}" do
         expect(page).to have_content("Info Technology")
         expect(page).to have_content("First Floor")
-        expect(page).to have_content("Jeff C")
         expect(page).to_not have_content("Human Resources")
-        expect(page).to_not have_content("Joe Schmoe")
       end
 
       within "#dept-#{ad.id}" do
         expect(page).to have_content("Marketing")
         expect(page).to have_content("Second Floor")
-        expect(page).to have_content("Jeff C")
         expect(page).to_not have_content("Human Resources")
-        expect(page).to_not have_content("Old Greg")
       end
     end
   end
