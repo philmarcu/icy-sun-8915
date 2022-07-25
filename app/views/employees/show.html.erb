@@ -1,0 +1,8 @@
+<h1><%= @employee.name %></h1>
+<b><%= @employee.dept_name %></b> <br>
+<% @employee.tickets.each do |tick| %>
+  <div id= "tick-<%= tick.id %>">
+    <p> Ticket Issue: <%= tick.subject %></p>
+    <p><%= tick.age %> months since first issued</p>
+  </div>
+<% end %>
