@@ -45,12 +45,11 @@ RSpec.describe 'employee show page' do
 
       expect(page).to have_content("I'm old greg")
       expect(page).to have_content("We`re out of printer paper")
+      
       expect(page).to_not have_content("Ticket Issue: We ran out of parking")
 
       fill_in 'ticket_number', with: "#{parking.id}"
       click_on 'Submit'
-
-      save_and_open_page
 
       expect(page).to have_content("Ticket Issue: We ran out of parking")
     end
