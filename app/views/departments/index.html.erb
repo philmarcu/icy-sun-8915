@@ -1,0 +1,12 @@
+<h1>Welcome to Business! Here's our Departments</h1>
+
+<% @departments.each do |dept| %>
+  <div id="dept-<%= dept.id %>">
+  <b><%= dept.name %></b> <br>
+  <p><%= dept.floor %> Floor</p>
+  </div>
+    <p>Current <%= dept.name %> Employees-</p>
+  <% dept.employees.each do |emp| %>
+    <p> <%= emp.name %></p>
+  <% end %>
+<% end %>
