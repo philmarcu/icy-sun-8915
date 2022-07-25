@@ -6,3 +6,9 @@
     <p><%= tick.age %> months since first issued</p>
   </div>
 <% end %>
+
+<%= form_with url: "/employees/#{@employee.id}", method: :patch, local: true do |f| %>
+  <%= f.label :ticket_number %>
+  <%= f.number_field :ticket_number %>
+  <%= f.submit "Submit" %>
+<% end %>
